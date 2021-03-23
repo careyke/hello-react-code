@@ -4,6 +4,7 @@
     "jsx": "react",
     "isolatedModules": true,
     "strict": true,
+    "target": "ESNext",
 
     "baseUrl": "./",
     "paths": {

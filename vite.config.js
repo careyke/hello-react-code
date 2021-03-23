@@ -10,10 +10,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    new ReactRefreshPlugin(),
     {
       ...eslint({
-        fix: true,
+        fixed: true,
         include: "**/*.(js|ts|jsx|tsx)",
         exclude: "node_modules/**",
         throwOnError: true,
@@ -21,6 +20,7 @@ export default defineConfig({
       }),
       enforce: "pre", // 需要配置，否则会编译源文件
     },
+    new ReactRefreshPlugin(),
   ],
   server: {
     port: 8000,
