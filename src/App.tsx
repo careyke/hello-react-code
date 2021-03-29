@@ -28,6 +28,11 @@ const App: FC = () => {
           <Age resource={data} />
         </Suspense>
       </Suspense>
+      <div>
+        {Array.from(new Array(1000)).map((_, index) => {
+          return <p key={index}>{index}</p>;
+        })}
+      </div>
     </div>
   );
 };
