@@ -1,6 +1,6 @@
-import React, { FC, Suspense } from "react";
+import React, { FC, Suspense, useState } from "react";
 
-import { fetchData } from "./fakeApi";
+import { fetchData, fetchDataSecond } from "./fakeApi";
 import classes from "./index.module.less";
 
 interface Props {
@@ -17,15 +17,20 @@ const Age: FC<Props> = ({ resource }) => {
   return <div>{age}</div>;
 };
 
-const data = fetchData();
-
 const App: FC = () => {
+  const [resource, setResource] = useState(() => fetchData());
+
+  const handleClick = () => {
+    setResource(fetchDataSecond());
+  };
+
   return (
     <div className={classes.container}>
+      <button onClick={handleClick}>切换请求</button>
       <Suspense fallback={<div>Loading user ...</div>}>
-        <User resource={data}></User>
+        <User resource={resource}></User>
         <Suspense fallback={<div>Loading age ...</div>}>
-          <Age resource={data} />
+          <Age resource={resource} />
         </Suspense>
       </Suspense>
       <div>
