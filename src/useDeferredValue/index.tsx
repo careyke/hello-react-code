@@ -1,14 +1,6 @@
 import React, { useState } from "react";
 
-const getLis = (key: string) => {
-  const arr = [];
-  for (let i = 0; i < 100000; i++) {
-    if (String(i).includes(key)) {
-      arr.push(<li key={i}>{i}</li>);
-    }
-  }
-  return arr;
-};
+import List from "./List";
 
 export default function UseDeferredValueProcess() {
   const [value, setValue] = useState("");
@@ -26,7 +18,7 @@ export default function UseDeferredValueProcess() {
         <input onChange={handleChange} />
       </div>
       <div>
-        <ul>{deferredValue ? getLis(deferredValue) : null}</ul>
+        <List value={deferredValue} />
       </div>
     </div>
   );

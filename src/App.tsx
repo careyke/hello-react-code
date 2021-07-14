@@ -6,11 +6,10 @@ import React, { FC } from "react";
 
 // import UseTransitionProcess from "./useTransition/UseTransitionProcess";
 
-// import UseDeferredValueProcess from "./useDeferredValue/index";
-import ConcurrentListNotUseDeferredValue from "./useDeferredValue/ConcurrentListNotUseDeferredValue";
+import UseDeferredValueProcess from "./useDeferredValue/index";
 
 const App: FC = () => {
-  return <ConcurrentListNotUseDeferredValue />;
+  return <UseDeferredValueProcess />;
 };
 
 export default App;
