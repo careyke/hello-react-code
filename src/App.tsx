@@ -6,10 +6,12 @@ import React, { FC } from "react";
 
 // import UseTransitionProcess from "./useTransition/UseTransitionProcess";
 
-import UseDeferredValueProcess from "./useDeferredValue/index";
+// import UseDeferredValueProcess from "./useDeferredValue/index";
+
+import Lazy from "./lazy/index";
 
 const App: FC = () => {
-  return <UseDeferredValueProcess />;
+  return <Lazy />;
 };
 
 export default App;

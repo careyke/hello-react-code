@@ -5,6 +5,7 @@
     "isolatedModules": true,
     "strict": true,
     "target": "ESNext",
+    "module": "esnext",
 
     "baseUrl": "./",
     "paths": {
