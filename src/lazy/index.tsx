@@ -1,6 +1,15 @@
 import React, { Suspense, useState } from "react";
 
-const LazyApp = React.lazy(() => import("./Hello"));
+const LazyApp = React.lazy(() => {
+  const p = new Promise<number>((resolve) => {
+    setTimeout(() => {
+      resolve(0);
+    }, 3000);
+  });
+  return p.then(() => {
+    return import("./Hello");
+  });
+});
 
 const LazyTest = () => {
   const [count, setCount] = useState(0);
